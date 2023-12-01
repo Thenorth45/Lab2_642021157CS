@@ -10,17 +10,35 @@ class Firstpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text("Travel"),
-          elevation: 10,
-          backgroundColor: Color.fromARGB(255, 22, 253, 1)),
+        title: const Text(
+          "Travel",
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 0, 0, 0),
+          ),
+        ),
+        elevation: 10,
+        backgroundColor: Color.fromARGB(255, 22, 253, 1),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              child: Image.asset(
-                "assets/img/Newyork.png",
-                fit: BoxFit.cover,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Color.fromARGB(255, 3, 253, 232), // สีขอบ
+                  width: 5.0, // ความกว้างของขอบ
+                ),
+                borderRadius: BorderRadius.circular(50.0), // ทำให้มีขอบโค้ง
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(45.0), // ขอบโค้งภายใน
+                child: Image.asset(
+                  "assets/img/Newyork.png",
+                  fit: BoxFit.scaleDown,
+                ),
               ),
             ),
             Row(
